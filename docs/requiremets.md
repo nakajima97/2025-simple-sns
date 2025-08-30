@@ -57,7 +57,7 @@
 ### 5.1 フロントエンド
 
 * フレームワーク：Next.js App Router / React
-* UIライブラリ：Tailwind CSS
+* UIライブラリ：shadcn/ui / Tailwind CSS
 * 状態管理：Context API
 * テスト：vitest、Storybook
 
@@ -73,3 +73,13 @@
 * バージョン管理：Git
 * 開発環境：ローカルPC上で完結
 * ログインセッション管理：Middleware + Route Handlersでcookie活用
+  * ライブラリは使わない
+
+## 6. 主要ライブラリ
+
+- Drizzle
+- shadcn/ui
+- Tailwind CSS
+- vitest
+- storybook
+- uuid
