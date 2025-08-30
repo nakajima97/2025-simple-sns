@@ -83,3 +83,4 @@
 - vitest
 - storybook
 - uuid
+- better-sqlite3

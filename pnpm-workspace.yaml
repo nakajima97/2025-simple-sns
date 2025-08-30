@@ -1,6 +1,7 @@
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - '@tailwindcss/oxide'
+  - better-sqlite3
   - core-js-pure
   - esbuild
   - sharp
