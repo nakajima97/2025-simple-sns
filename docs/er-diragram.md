@@ -2,6 +2,7 @@
 erDiagram
     User {
         UUID id PK
+        string profile_id UK
         DATETIME created_at
     }
 
