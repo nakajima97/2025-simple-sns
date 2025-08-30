@@ -21,6 +21,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "ts-node": "^10.9.2",
+    "uuid": "^11.1.0",
     "webpack": "^5.92.1"
   },
   "devDependencies": {
