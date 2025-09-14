@@ -64,3 +64,15 @@
         ├── format.ts     # 文字列フォーマット
         └── ...
 ```
+
+## 設計方針
+
+### ファイル配置戦略
+- **コロケーション（Co-location）戦略**を採用
+- 関連するファイル（コンポーネント、フック、テスト、ストーリー）は同一ディレクトリに配置
+- これにより保守性と開発効率を向上
+
+### テストファイルの配置
+- `*.test.ts` / `*.test.tsx` ファイルはテスト対象と同じディレクトリに配置
+- 例: `useContainerHook.ts` → `useContainerHook.test.ts`
+- 例: `ComponentName/index.tsx` → `ComponentName/ComponentName.test.tsx`
