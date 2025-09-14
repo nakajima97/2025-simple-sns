@@ -1,18 +1,18 @@
 ```mermaid
 erDiagram
     User {
-        UUID id PK
-        string profile_id UK
-        DATETIME created_at
+        int id PK
+        text profile_id UK
+        text created_at
     }
 
-    Tweet {
-        UUID id PK
-        UUID user_id FK
-        TEXT text
-        DATETIME created_at
+    Posts {
+        int id PK
+        int user_id FK
+        text text
+        text created_at
     }
 
-    User ||--o{ Tweet : "posts"
+    User ||--o{ Posts : "posts"
 
 ```
