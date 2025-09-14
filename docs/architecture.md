@@ -25,7 +25,8 @@
     │   ├── containers/     # コンテナコンポーネント
     │   │   ├── ContainerName/
     │   │   │   ├── index.tsx
-    │   │   │   └── useContainerHook.ts
+    │   │   │   ├── useContainerHook.ts
+    │   │   │   └── useContainerHook.test.ts
     │   │   └── ...
     │   └── ...
     ├── features/          # 特定の機能に関するコンポーネント、ロジック、ページ
@@ -38,7 +39,8 @@
     │   │   ├── containers/     # 機能固有の Container Components (ロジックと状態管理)
     │   │   │   ├── ContainerName/
     │   │   │   │   ├── index.tsx
-    │   │   │   │   └── useContainerHook.ts  # コンテナ用のカスタムフック
+    │   │   │   │   ├── useContainerHook.ts  # コンテナ用のカスタムフック
+    │   │   │   │   └── useContainerHook.test.ts # カスタムフックのテストコード
     │   │   │   └── ...
     │   │   ├── hooks/          # 機能固有のカスタムフック
     │   │   ├── types/          # 機能固有の型定義
@@ -62,3 +64,15 @@
         ├── format.ts     # 文字列フォーマット
         └── ...
 ```
+
+## 設計方針
+
+### ファイル配置戦略
+- **コロケーション（Co-location）戦略**を採用
+- 関連するファイル（コンポーネント、フック、テスト、ストーリー）は同一ディレクトリに配置
+- これにより保守性と開発効率を向上
+
+### テストファイルの配置
+- `*.test.ts` / `*.test.tsx` ファイルはテスト対象と同じディレクトリに配置
+- 例: `useContainerHook.ts` → `useContainerHook.test.ts`
+- 例: `ComponentName/index.tsx` → `ComponentName/ComponentName.test.tsx`
