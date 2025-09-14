@@ -6,13 +6,13 @@ erDiagram
         text created_at
     }
 
-    Tweet {
+    Posts {
         int id PK
         int user_id FK
         text text
         text created_at
     }
 
-    User ||--o{ Tweet : "posts"
+    User ||--o{ Posts : "posts"
 
 ```
