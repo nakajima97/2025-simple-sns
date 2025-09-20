@@ -36,5 +36,4 @@ export const signupAction = async (formData: FormData) => {
   const profileId = formData.get('profileId') as string;
 
   const id = await signup({ name, profileId });
-  console.log({ id });
 };
