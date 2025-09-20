@@ -7,7 +7,7 @@ const Page = () => {
         <li>ID：</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default Page;

@@ -1,16 +1,22 @@
-import { Button } from "@/components/ui/shadcn/button";
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/shadcn/card";
-import { Input } from "@/components/ui/shadcn/input";
-import { Label } from "@/components/ui/shadcn/label";
+import { Button } from '@/components/ui/shadcn/button';
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/shadcn/card';
+import { Input } from '@/components/ui/shadcn/input';
+import { Label } from '@/components/ui/shadcn/label';
 
 const Page = () => (
   <div className="flex justify-center items-center w-full h-dvh">
     <Card className="w-full max-w-sm h-fit">
       <CardHeader>
         <CardTitle>Create to your account</CardTitle>
-        <CardDescription>
-          SNSで使う名前を入力してください
-        </CardDescription>
+        <CardDescription>SNSで使う名前を入力してください</CardDescription>
         <CardAction>
           <Button variant="link">Sign Up</Button>
         </CardAction>
@@ -19,11 +25,8 @@ const Page = () => (
         <form>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label htmlFor="id">名前
-              </Label>
-              <Input
-                id="name"
-                required />
+              <Label htmlFor="id">名前</Label>
+              <Input id="name" required />
             </div>
           </div>
         </form>
@@ -35,6 +38,6 @@ const Page = () => (
       </CardFooter>
     </Card>
   </div>
-)
+);
 
 export default Page;
