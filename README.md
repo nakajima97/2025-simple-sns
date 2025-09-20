@@ -7,3 +7,14 @@
 ```
 npx drizzle-kit push
 ```
+
+### SQLite操作
+接続
+```
+sqlite3 local.d
+```
+
+テーブル一覧
+```
+.table
+```
