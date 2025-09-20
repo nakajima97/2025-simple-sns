@@ -9,7 +9,7 @@ const Page = () => (
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account
+          ログインに使うIDを入力してください
         </CardDescription>
         <CardAction>
           <Button variant="link">Sign Up</Button>
@@ -19,15 +19,10 @@ const Page = () => (
         <form>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="id">ID</Label>
               <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
+                id="id"
                 required />
-            </div>
-            <div className="grid gap-2">
-              <Input id="password" type="password" required />
             </div>
           </div>
         </form>
