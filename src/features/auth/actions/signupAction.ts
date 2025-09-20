@@ -6,7 +6,7 @@ type Arguments = {
   profileId: string;
 };
 
-const signup = async ({name, profileId}: Arguments) => {
+const signup = async ({ name, profileId }: Arguments) => {
   const client = getClient();
 
   try {
@@ -25,16 +25,16 @@ const signup = async ({name, profileId}: Arguments) => {
     // IDを返す
     return id;
   } catch (e) {
-    console.error(e)
+    console.error(e);
     throw new Error('ユーザ登録に失敗しました');
   }
 };
 
 export const signupAction = async (formData: FormData) => {
-  'use server'
+  'use server';
   const name = formData.get('name') as string;
   const profileId = formData.get('profileId') as string;
 
-  const id = await signup({name, profileId})
-  console.log({id})
-}
+  const id = await signup({ name, profileId });
+  console.log({ id });
+};

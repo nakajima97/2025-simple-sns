@@ -23,28 +23,28 @@ const Page = () => {
             <Button variant="link">Sign Up</Button>
           </CardAction>
         </CardHeader>
-          <form action={signupAction}>
-        <CardContent>
+        <form action={signupAction}>
+          <CardContent>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="name">名前</Label>
-                <Input id="name" name='name' required />
+                <Input id="name" name="name" required />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="id">プロフィールID</Label>
-                <Input id="id" name='profileId' required />
+                <Input id="id" name="profileId" required />
               </div>
             </div>
-        </CardContent>
-        <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
-            Login
-          </Button>
-        </CardFooter>
-          </form>
+          </CardContent>
+          <CardFooter className="flex-col gap-2">
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
+          </CardFooter>
+        </form>
       </Card>
     </div>
   );
-}
+};
 
 export default Page;
