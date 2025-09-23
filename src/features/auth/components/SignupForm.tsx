@@ -21,6 +21,7 @@ export const SignupForm = () => {
 
   useEffect(() => {
     if (!isPending && formState?.id) {
+      sessionStorage.setItem('newUserId', formState.id.toString());
       router.push('/timeline');
     }
   }, [isPending, formState?.id, router.push])
