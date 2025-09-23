@@ -15,7 +15,7 @@ type PostsType = {
 };
 
 const Page = () => {
-  const [showDialog, setShowDialog] = useState();
+  const [showDialog, setShowDialog] = useState<boolean>(false);
 
   useEffect(() => {
     const newUserId = sessionStorage.getItem('newUserId');

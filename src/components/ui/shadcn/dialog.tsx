@@ -34,6 +34,11 @@ const Dialog = React.forwardRef<
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
       onClick={() => onOpenChange?.(false)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onOpenChange?.(false);
+        }
+      }}
     >
       <div
         ref={ref}
