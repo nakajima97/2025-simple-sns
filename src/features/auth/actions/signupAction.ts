@@ -1,3 +1,5 @@
+'use server';
+
 import { getClient } from '@/db/client';
 import { users } from '@/db/schema/users';
 
@@ -5,6 +7,10 @@ type Arguments = {
   name: string;
   profileId: string;
 };
+
+type SignupState = {
+  id?: number
+}
 
 const signup = async ({ name, profileId }: Arguments) => {
   const client = getClient();
@@ -30,10 +36,13 @@ const signup = async ({ name, profileId }: Arguments) => {
   }
 };
 
-export const signupAction = async (formData: FormData) => {
-  'use server';
-  const name = formData.get('name') as string;
-  const profileId = formData.get('profileId') as string;
+export const signupAction = async (prevState: SignupState, queryData: FormData): Promise<SignupState> => {
+  const name = queryData.get('name') as string;
+  const profileId = queryData.get('profileId') as string;
 
   const id = await signup({ name, profileId });
+
+  return {
+    id
+  }
 };
