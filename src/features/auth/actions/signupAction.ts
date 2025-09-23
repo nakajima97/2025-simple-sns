@@ -9,8 +9,8 @@ type Arguments = {
 };
 
 type SignupState = {
-  id?: number
-}
+  id?: number;
+};
 
 const signup = async ({ name, profileId }: Arguments) => {
   const client = getClient();
@@ -36,13 +36,16 @@ const signup = async ({ name, profileId }: Arguments) => {
   }
 };
 
-export const signupAction = async (prevState: SignupState, queryData: FormData): Promise<SignupState> => {
+export const signupAction = async (
+  prevState: SignupState,
+  queryData: FormData,
+): Promise<SignupState> => {
   const name = queryData.get('name') as string;
   const profileId = queryData.get('profileId') as string;
 
   const id = await signup({ name, profileId });
 
   return {
-    id
-  }
+    id,
+  };
 };

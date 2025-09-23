@@ -1,34 +1,34 @@
-'use client'
+'use client';
 
-import * as React from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import * as React from 'react';
 
 const Dialog = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
-    open?: boolean
-    onOpenChange?: (open: boolean) => void
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
   }
 >(({ className, open, onOpenChange, children, ...props }, ref) => {
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && open) {
-        onOpenChange?.(false)
+        onOpenChange?.(false);
       }
-    }
+    };
 
     if (open) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [open, onOpenChange])
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [open, onOpenChange]);
 
-  if (!open) return null
+  if (!open) return null;
 
   return (
     <div
@@ -40,7 +40,7 @@ const Dialog = React.forwardRef<
         className={cn(
           'relative bg-white rounded-lg shadow-lg p-6 w-full max-w-md mx-4',
           'animate-in fade-in-0 zoom-in-95 duration-200',
-          className
+          className,
         )}
         onClick={(e) => e.stopPropagation()}
         {...props}
@@ -48,9 +48,9 @@ const Dialog = React.forwardRef<
         {children}
       </div>
     </div>
-  )
-})
-Dialog.displayName = 'Dialog'
+  );
+});
+Dialog.displayName = 'Dialog';
 
 const DialogHeader = React.forwardRef<
   HTMLDivElement,
@@ -58,11 +58,14 @@ const DialogHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)}
+    className={cn(
+      'flex flex-col space-y-1.5 text-center sm:text-left',
+      className,
+    )}
     {...props}
   />
-))
-DialogHeader.displayName = 'DialogHeader'
+));
+DialogHeader.displayName = 'DialogHeader';
 
 const DialogTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -70,11 +73,14 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn('text-lg font-semibold leading-none tracking-tight', className)}
+    className={cn(
+      'text-lg font-semibold leading-none tracking-tight',
+      className,
+    )}
     {...props}
   />
-))
-DialogTitle.displayName = 'DialogTitle'
+));
+DialogTitle.displayName = 'DialogTitle';
 
 const DialogDescription = React.forwardRef<
   HTMLParagraphElement,
@@ -85,16 +91,16 @@ const DialogDescription = React.forwardRef<
     className={cn('text-sm text-muted-foreground', className)}
     {...props}
   />
-))
-DialogDescription.displayName = 'DialogDescription'
+));
+DialogDescription.displayName = 'DialogDescription';
 
 const DialogContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn('pt-0', className)} {...props} />
-))
-DialogContent.displayName = 'DialogContent'
+));
+DialogContent.displayName = 'DialogContent';
 
 const DialogFooter = React.forwardRef<
   HTMLDivElement,
@@ -102,11 +108,14 @@ const DialogFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)}
+    className={cn(
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+      className,
+    )}
     {...props}
   />
-))
-DialogFooter.displayName = 'DialogFooter'
+));
+DialogFooter.displayName = 'DialogFooter';
 
 export {
   Dialog,
@@ -115,4 +124,4 @@ export {
   DialogDescription,
   DialogContent,
   DialogFooter,
-}
+};

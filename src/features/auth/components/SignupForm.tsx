@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { Button } from '@/components/ui/shadcn/button';
 import {
@@ -16,15 +16,15 @@ import { useRouter } from 'next/navigation';
 import { useActionState, useEffect } from 'react';
 
 export const SignupForm = () => {
-  const [formState, formAction, isPending] = useActionState(signupAction, {})
-  const router = useRouter()
+  const [formState, formAction, isPending] = useActionState(signupAction, {});
+  const router = useRouter();
 
   useEffect(() => {
     if (!isPending && formState?.id) {
       sessionStorage.setItem('newUserId', formState.id.toString());
       router.push('/timeline');
     }
-  }, [isPending, formState?.id, router.push])
+  }, [isPending, formState?.id, router.push]);
 
   return (
     <div className="flex justify-center items-center w-full h-dvh">
@@ -55,5 +55,5 @@ export const SignupForm = () => {
         </CardContent>
       </Card>
     </div>
-  )
-}
+  );
+};

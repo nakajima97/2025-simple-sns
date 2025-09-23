@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   Card,
@@ -15,7 +15,7 @@ type PostsType = {
 };
 
 const Page = () => {
-  const [showDialog, setShowDialog] = useState()
+  const [showDialog, setShowDialog] = useState();
 
   useEffect(() => {
     const newUserId = sessionStorage.getItem('newUserId');

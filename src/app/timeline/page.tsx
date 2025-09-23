@@ -1,5 +1,6 @@
-'use client'
+'use client';
 
+import { Button } from '@/components/ui/shadcn/button';
 import {
   Card,
   CardContent,
@@ -14,7 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/shadcn/dialog';
-import { Button } from '@/components/ui/shadcn/button';
 import { useEffect, useState } from 'react';
 
 type PostsType = {
@@ -82,9 +82,7 @@ const Page = () => {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button onClick={() => setShowDialog(false)}>
-              OK
-            </Button>
+            <Button onClick={() => setShowDialog(false)}>OK</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
