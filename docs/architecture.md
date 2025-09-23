@@ -17,31 +17,10 @@
     │   │   │   ├── input.tsx
     │   │   │   └── ...
     │   │   └── index.ts   # コンポーネントのエクスポート
-    │   ├── presentational/  # プレゼンテーショナルコンポーネント
-    │   │   ├── ComponentName/ # 例: Button, Input, Header など
-    │   │   │   ├── index.tsx
-    │   │   │   └── ComponentName.stories.tsx
-    │   │   └── ...
-    │   ├── containers/     # コンテナコンポーネント
-    │   │   ├── ContainerName/
-    │   │   │   ├── index.tsx
-    │   │   │   ├── useContainerHook.ts
-    │   │   │   └── useContainerHook.test.ts
-    │   │   └── ...
     │   └── ...
     ├── features/          # 特定の機能に関するコンポーネント、ロジック、ページ
     │   ├── featureName/   # 例: auth, productList, checkout など
-    │   │   ├── presentational/  # 機能固有の Presentational Components
-    │   │   │   ├── ComponentName/
-    │   │   │   │   ├── index.tsx
-    │   │   │   │   └── ComponentName.stories.tsx
-    │   │   │   └── ...
-    │   │   ├── containers/     # 機能固有の Container Components (ロジックと状態管理)
-    │   │   │   ├── ContainerName/
-    │   │   │   │   ├── index.tsx
-    │   │   │   │   ├── useContainerHook.ts  # コンテナ用のカスタムフック
-    │   │   │   │   └── useContainerHook.test.ts # カスタムフックのテストコード
-    │   │   │   └── ...
+    │   │   ├── components/     # 機能固有のコンポーネント
     │   │   ├── hooks/          # 機能固有のカスタムフック
     │   │   ├── types/          # 機能固有の型定義
     │   │   ├── lib/            # 機能固有の外部ライブラリの設定やラッパー

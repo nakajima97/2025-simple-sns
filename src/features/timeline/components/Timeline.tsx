@@ -1,20 +1,11 @@
 'use client';
 
-import { Button } from '@/components/ui/shadcn/button';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from '@/components/ui/shadcn/card';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/shadcn/dialog';
 import { useEffect, useState } from 'react';
 
 type PostsType = {
@@ -24,14 +15,13 @@ type PostsType = {
 };
 
 const Page = () => {
-  const [showDialog, setShowDialog] = useState(false);
-  const [newUserId, setNewUserId] = useState<string | null>(null);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
 
   useEffect(() => {
-    const userId = sessionStorage.getItem('newUserId');
-    if (userId) {
-      setNewUserId(userId);
+    const newUserId = sessionStorage.getItem('newUserId');
+    if (newUserId) {
       setShowDialog(true);
+      // 表示後すぐに削除（一度だけ表示）
       sessionStorage.removeItem('newUserId');
     }
   }, []);
@@ -72,20 +62,6 @@ const Page = () => {
           <PostCard key={post.id} name={post.name} content={post.content} />
         ))}
       </div>
-
-      <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>アカウント作成完了</DialogTitle>
-            <DialogDescription>
-              ユーザーID: {newUserId} でアカウントが作成されました！
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <Button onClick={() => setShowDialog(false)}>OK</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
