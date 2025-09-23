@@ -24,7 +24,7 @@ export const SignupForm = () => {
     if (!isPending && formState?.id) {
       router.push('/timeline');
     }
-  })
+  }, [isPending, formState])
 
   return (
     <div className="flex justify-center items-center w-full h-dvh">
